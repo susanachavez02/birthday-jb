@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+h1 {
+  margin-top: 50px; /* space from very top */
+  font-size: 4em;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  animation: bounce 2s infinite;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  top: -80px
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Cake */
+.cake {
+  position: relative;
+  width: 200px;
+  margin: 0 auto 20px auto;
+}
+
+.plate {
+  width: 240px;
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  z-index: -1;
+}
+
+.layer {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.layer-bottom { background: #ff7675; }
+.layer-middle { background: #fab1a0; margin-top: -15px; }
+.layer-top { background: #ffeaa7; margin-top: -15px; }
+
+/* Candles */
+.candles {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 25px;
+}
+
+.candle {
+  width: 12px;
+  height: 40px;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+}
+
+.flame {
+  width: 14px;
+  height: 20px;
+  background: radial-gradient(circle, #ffdd59 30%, #ff6b6b 70%);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+  from { transform: translateX(-50%) scale(1); opacity: 1; }
+  to { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+}
+
+/* Number on cake */
+.number {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 80px;
+  height: 100px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: float linear infinite;
+  z-index: 0;
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background: #333;
+  transform: translateX(-50%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+}
+
+/* Confetti */
+#confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Music button */
+#playMusic {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #ff4b5c;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#playMusic:hover {
+  background: #ff4b5c;
+  color: #fff;
+}
+
+#countdown, #birthdayMessage {
+  font-size: 1.8em;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+#birthdayMessage a {
+  color: #ffeaa7;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+#birthdayMessage a:hover {
+  color: #fd79a8;
+}
+
